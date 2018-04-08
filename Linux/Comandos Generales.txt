@@ -280,6 +280,14 @@ Listar archivos:
     ls -l
     ls -tr (por fecha)
 
+Listar archivos ocultos:
+    ls -ld .?*
+    
+        -l  usa formato detallado de listado
+        -d  enumera entradas de directorio en lugar de contenido y no borra relacion simbólica
+        .?* solo archivos ocultos
+        
+    ls -d .?* (solo formato lista)
 
 Empaquetar folder:
     zip -r NOMBRE.zip FOLDER/
