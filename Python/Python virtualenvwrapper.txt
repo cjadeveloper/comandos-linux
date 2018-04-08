@@ -57,6 +57,14 @@ Se debe ejecutar el comando mkvirtualenv más el nombre del virtualenv.
 Las extensiones se encargan de manera automática de crear el virtualenv
 en el directorio correspondiente:
 
+mkvirtualenv [-a project_path] [-i package] [-r requirements_file] [virtualenv options] ENVNAME
+
+The -a option can be used to associate an existing project directory with the new environment.
+The -i option can be used to install one or more packages (by repeating the option) after
+the environment is created.
+The -r option can be used to specify a text file listing packages to be installed.
+The argument value is passed to pip -r to be installed.
+
 $ mkvirtualenv mi_proyecto
 
 
