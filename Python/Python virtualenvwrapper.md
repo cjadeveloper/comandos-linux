@@ -53,11 +53,9 @@ Se debe ejecutar el comando mkvirtualenv más el nombre del virtualenv. Las exte
 
 mkvirtualenv [-a project_path] [-i package] [-r requirements_file] [virtualenv options] ENVNAME
 
-The -a option can be used to associate an existing project directory with the new environment.
-The -i option can be used to install one or more packages (by repeating the option) after
-the environment is created.
-The -r option can be used to specify a text file listing packages to be installed.
-The argument value is passed to pip -r to be installed.
+La opción -a se puede usar para asociar un directorio de proyecto existente con el nuevo entorno.
+La opción -i se puede usar para instalar uno o más paquetes (repitiendo la opción) después de crear el entorno.
+La opción -r se puede utilizar para especificar un archivo de texto que enumera los paquetes que se instalarán. El valor del argumento se pasa a pip -r para ser instalado.
 
 ```bash
 mkvirtualenv mi_proyecto
