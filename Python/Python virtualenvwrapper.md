@@ -4,6 +4,8 @@
 
 [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) es un conjunto de scripts de shell que hace que sea mucho más fácil administrar estos entornos.
 
+En los servidores de producción se suele utilizar virtualenv simple; virtualenvwrapper es muy útil en el desarrollo.
+
 ## Instalación
 
 Fedora
