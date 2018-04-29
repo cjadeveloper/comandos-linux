@@ -1,10 +1,14 @@
 Introducción
 ------------
 Un entorno virtual de Python es un espacio completamente independiente de otros
-entornos virtuales y de los paquetes instalados globalmente en el sistema
+entornos virtuales y de los paquetes instalados globalmente en el sistema.
+
+Todo lo que virtualenv hace es instalar un intérprete de Python modificado que tiene una
+ruta de Python diferente; e instala una versión modificada de pip para manejar paquetes 
+Python en el directorio de entorno aislado en lugar de hacerlo en la ruta del sistema base.
 
 
-Instalacion
+Instalación
 -----------
 Fedora
 $ sudo dnf install python-virtualenv
