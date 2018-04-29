@@ -1,10 +1,10 @@
-# Usando Virtualenvwrapper, un conjunto de extensiones para Virtualenv
+# Usando Virtualenvwrapper
 
 ## Introducción
 
-Un entorno virtual de Python es un espacio completamente independiente de otros entornos virtuales y de los paquetes instalados globalmente en el sistema http://rukbottoland.com/blog/tutorial-de-python-virtualenvwrapper/
+[Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) es un conjunto de scripts de shell que hace que sea mucho más fácil administrar estos entornos.
 
-## Instalacion
+## Instalación
 
 Fedora
 $ sudo dnf install python-virtualenvwrapper
