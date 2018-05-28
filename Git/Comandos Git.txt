@@ -54,6 +54,11 @@ Registro de commits:
     $ git log
     $ git log --oneline
     $ git log --graph
+    $ git log --decorate
+    $ git log --all
+    
+    También podemos concatenar más de uno:
+    $ git log --graph --decorate --oneline
 
 
 Reset archivo:
