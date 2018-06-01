@@ -9,10 +9,15 @@ En los servidores de producción se suele utilizar virtualenv simple; virtualenv
 ## Instalación
 
 Fedora
+
+```bash
 $ sudo dnf install python-virtualenvwrapper
+```
 
 Debian, Ubuntu
+```bash
 $ sudo apt-get install virtualenvwrapper
+```
 
 ## Configuración de virtualenvwrapper
 
