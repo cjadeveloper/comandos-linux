@@ -348,6 +348,9 @@ Situarse en la rama que va a fusionar
 ALIAS GIT
 ---------
 
+git config --global alias.co checkout
+git config --global alias.last 'log -1 HEAD'
+
 co = checkout
 st = status -b
 ci = commit
