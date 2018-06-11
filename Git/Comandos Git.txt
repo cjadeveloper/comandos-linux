@@ -30,7 +30,7 @@ Agregar todos los archivos/cambios:
     $ git add -A
 
 
-Agregar dinamicamente:
+Agregar dinámicamente (para hacer commits parciales de un archivo):
     $ git add -p
 
 
