@@ -83,7 +83,19 @@ Si estás en un entorno Unix. El siguiente comando hace el trabajo, dentro del e
 
 ### 5. Corregimos error de Celery (si especificamos en las opciones que use Celery).
 
-Si en las especificaciones del projecto, especificamos `Celery [y]: y`
+Al momento de ejecutar este tutorial, si en las especificaciones del projecto, especificamos `use_celery [n]: y`, cuando queramos migrar nos va a salir un [error](https://github.com/pydanny/cookiecutter-django/issues/1741) que tenemos solucionar, cambiando la configuración en 'settings/base.py':
+
+```python
+CELERY_BROKER_URL = env('CELERY_BROKER_URL') 
+```
+
+Por esto
+
+```python
+CELERY_BROKER_URL = env('CELERY_BROKER_URL', default="redis://localhost:6379")
+```
+
+Guardamos y eso es todo.
 
 ### 6. Aplicamos las migraciones.
 
