@@ -5,7 +5,7 @@
 ## Instalar [cookiecutter](https://github.com/audreyr/cookiecutter) (si no lo tenemos ya) globalmente.
 
 ```console
-$ pip install "cookiecutter>=1.4.0"
+pip install "cookiecutter>=1.4.0"
 ```
 
 ## Instalar cookiecutter-django y correrlo localmente para desarrollo.
@@ -24,21 +24,23 @@ Con [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/proje
 Creamos un nuevo entorno virtual en el `WORKON_HOME` y un nuevo directorio de proyecto en `PROJECT_HOME` definidas en el archivo `~/.bashrc` haciendo
 
 ```console
-$ mkproject [virtualenv options] ENVNAME
+mkproject [virtualenv options] ENVNAME
 ```
 
 Por ejemplo, para crear un nuevo entorno virtual llamado `portfolio` en el directorio de mis entornos virtuales `~/.virtualenvs/` y un directorio `portfolio` en mi directorio de projecto `~/djprojects/` utilizando mi Python 3.6.4 escribo:
 
 ```console
-$ mkproject -p python3.6 portfolio
+mkproject -p python3.6 portfolio
 ```
 
 Con esto, vinculamos el virtualenv `portfolio` al proyecto `portfolio` de un solo paso.
 
+**En este paso nos vamos a encontrar dentro de la carpeta `portfolio`, tendríamos que salir afuera de ella y ejecutar cookiecutter fuera de la misma carpeta para sobreescribir la misma, cosa que nos cree el projecto `portfolio` dentro de la carpeta portfolio nuevamente.**
+
 ### 2. Con el entorno activo, ejecutamos cookiecutter contra el repositorio de cookiecutter-django.
 
 ```console
-(venv_name)$ cookiecutter https://github.com/pydanny/cookiecutter-django
+cookiecutter https://github.com/pydanny/cookiecutter-django
 ```
 
 ### 3. Instalamos los requerimientos para desarrollo local
