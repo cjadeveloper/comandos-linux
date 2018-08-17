@@ -33,11 +33,7 @@ Por ejemplo, para crear un nuevo entorno virtual llamado `portfolio` en el direc
 $ mkproject -p python3.6 portfolio
 ```
 
-Luego podemos vincular un virtualenv existente a un proyecto existente haciendo:
-
-```console
-setvirtualenvproject [virtualenv_path project_path]
-```
+Con esto, vinculamos el virtualenv `portfolio` al proyecto `portfolio` de un solo paso.
 
 ### 2. Con el entorno activo, ejecutamos cookiecutter contra el repositorio de cookiecutter-django.
 
