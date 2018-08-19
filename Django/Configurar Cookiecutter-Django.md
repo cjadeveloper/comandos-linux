@@ -12,7 +12,7 @@ pip install "cookiecutter>=1.4.0"
 
 1. Crearse un entorno virtual con python 3.6
 2. Con el entorno activo, ejecutamos cookiecutter contra el repositorio de cookiecutter-django y completamos las opciones.
-3. Instalamos los requerimientos para desarrollo local.
+3. Vinculamos el venv actual con el projecto e instalamos los requerimientos para desarrollo local.
 4. Creamos y configuramos la base de datos en PostgreSQL para usarla con Django.
 5. Corregimos error de Celery (si especificamos en las opciones que use Celery).
 6. Aplicamos las migraciones.
@@ -92,7 +92,7 @@ debug [n]: n
  [SUCCESS]: Project initialized, keep up the good work!
 ```
 
-### 3. Vinculamos venv con projecto e instalamos los requerimientos para desarrollo local
+### 3. Vinculamos el venv actual con el projecto e instalamos los requerimientos para desarrollo local
 
 Luego que finalizamos, exitosamente, la parte de las preguntas y con el projecto de cookiecutter-django ya creado, vamos a vincular el entorno virtual con el directorio de trabajo con virtualenvwrapper, cosa que cuando iniciemos el venv en un futuro, nos dirija directamente a esa carpeta automaticamente, entre otros beneficios.
 
