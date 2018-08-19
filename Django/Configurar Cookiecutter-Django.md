@@ -43,7 +43,54 @@ Nos dirigimos al directorio donde queremos crear el projecto, en mi caso sera de
 cookiecutter https://github.com/pydanny/cookiecutter-django
 ```
 
-Contestaremos a las preguntas (es bueno ir anotando las respuestas, asi nos acordamos las opciones que hemos definido, ya que son muchas)
+Contestaremos a las preguntas (es bueno ir anotando las respuestas, asi nos acordamos las opciones que hemos definido, ya que son muchas). Por ejemplo, en nuestro caso:
+
+```console
+(mycookie) user@laptop:~/djprojects$ cookiecutter https://github.com/pydanny/cookiecutter-django
+project_name [My Awesome Project]: My Cookiecutter Project
+project_slug [my_cookiecutter_project]: my_cookie           
+description [Behold My Awesome Project!]: Cookiecutter Django basico de prueba
+author_name [Daniel Roy Greenfeld]: Cristian Javier Azulay
+domain_name [example.com]: example.com
+email [cristian-javier-azulay@example.com]: info@example.com
+version [0.1.0]: 
+Select open_source_license:
+1 - MIT
+2 - BSD
+3 - GPLv3
+4 - Apache Software License 2.0
+5 - Not open source
+Choose from 1, 2, 3, 4, 5 [1]: 1
+timezone [UTC]: America/Argentina/Buenos_Aires
+windows [n]: n
+use_pycharm [n]: n
+use_docker [n]: n
+Select postgresql_version:
+1 - 10.4
+2 - 10.3
+3 - 10.2
+4 - 10.1
+5 - 9.6
+6 - 9.5
+7 - 9.4
+8 - 9.3
+Choose from 1, 2, 3, 4, 5, 6, 7, 8 [1]: 5
+Select js_task_runner:
+1 - None
+2 - Gulp
+Choose from 1, 2 [1]: 1
+custom_bootstrap_compilation [n]: n
+use_compressor [n]: n
+use_celery [n]: n
+use_mailhog [n]: n
+use_sentry [n]: n
+use_whitenoise [n]: n
+use_heroku [n]: s
+use_travisci [n]: n
+keep_local_envs_in_vcs [y]: y
+debug [n]: n
+ [SUCCESS]: Project initialized, keep up the good work!
+```
 
 ### 3. Vinculamos venv con projecto e instalamos los requerimientos para desarrollo local
 
@@ -79,7 +126,7 @@ CREATEDB;
 -- Which is required for the Django tests
 
 -- Grant privileges to the user to access database
-GRANT ALL PRIVILEGES ON DATABASE my_project TO my_user;
+GRANT ALL PRIVILEGES ON DATABASE my_cookie TO my_user;
 ```
 En este punto, deberíamos tener una base de datos vacía trabajando con el usuario especificado.
 
@@ -88,12 +135,12 @@ Ahora tenemos que decirle a Django la información de mi base de datos. Para hac
 Si estás en un entorno Unix. El siguiente comando hace el trabajo, dentro del entorno virtual:
 
 ```console
-(venv_name)$ export DATABASE_URL=postgres://my_user:password@localhost:5432/my_project
+export DATABASE_URL=postgres://my_user:password@localhost:5432/my_cookie
 ```
 
 ### 5. Corregimos error de Celery (si especificamos en las opciones que use Celery).
 
-Al momento de ejecutar este tutorial, si en las especificaciones del projecto, especificamos `use_celery [n]: y`, cuando queramos migrar nos va a salir un [error](https://github.com/pydanny/cookiecutter-django/issues/1741) que tenemos solucionar, cambiando la configuración en 'settings/base.py':
+Al momento de ejecutar este tutorial, si en las especificaciones del projecto, especificamos `use_celery [n]: n`, pero en casos que especifiquemos que si, cuando queramos migrar nos va a salir un [error](https://github.com/pydanny/cookiecutter-django/issues/1741) que tenemos solucionar, cambiando la configuración en 'settings/base.py':
 
 ```python
 CELERY_BROKER_URL = env('CELERY_BROKER_URL') 
@@ -112,13 +159,13 @@ Guardamos y eso es todo.
 Después de esto, debería poder ejecutar las migraciones de Django sin ningún problema:
 
 ```console
-(venv_name)$ python manage.py migrate
+python manage.py migrate
 ```
 
 Si todo sale bien, deberiamos ver aplicarse las migraciones. Solo queda ejecutar
 
 ```console
-(venv_name)$ python manage.py runserver
+python manage.py runserver
 ```
 
 Y... voila!!!
