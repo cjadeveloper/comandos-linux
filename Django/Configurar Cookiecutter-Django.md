@@ -16,6 +16,7 @@ pip install "cookiecutter>=1.4.0"
 4. Creamos y configuramos la base de datos en PostgreSQL para usarla con Django.
 5. Corregimos error de Celery (si especificamos en las opciones que use Celery).
 6. Aplicamos las migraciones.
+7. Set/Unset variables de entorno de Django con virtualenvwrapper.
 
 ### 1. Crearse un entorno virtual con python 3.6
 
@@ -171,3 +172,7 @@ python manage.py runserver
 ```
 
 Y... voila!!!
+
+### 7. Set/Unset las variables de entorno de Django con virtualenvwrapper
+
+
