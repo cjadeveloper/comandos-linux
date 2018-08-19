@@ -2,7 +2,7 @@
 
 [Cookiecutter Django](https://github.com/pydanny/cookiecutter-django) es un marco para poner en marcha rápidamente los proyectos de Django listos para producción.
 
-## Instalar [cookiecutter](https://github.com/audreyr/cookiecutter) (si no lo tenemos ya) globalmente.
+## Instalar [cookiecutter](https://github.com/audreyr/cookiecutter) globalmente.
 
 ```console
 pip install "cookiecutter>=1.4.0"
