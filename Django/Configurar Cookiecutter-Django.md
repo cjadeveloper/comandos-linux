@@ -96,11 +96,13 @@ debug [n]: n
 
 Luego que finalizamos, exitosamente, la parte de las preguntas y con el projecto de cookiecutter-django ya creado, vamos a vincular el entorno virtual con el directorio de trabajo con virtualenvwrapper, cosa que cuando iniciemos el venv en un futuro, nos dirija directamente a esa carpeta automaticamente, entre otros beneficios.
 
+En este punto vamos a estar con el entorno virtual activo, si nos paramos dentro de la carpeta del proyecto y ejecutamos el comando `setvirtualenvproject` sin argumentos, se supone el directorio actual y el venv activo, asi que podemos hacer directamente 
+
 ```console
-setvirtualenvproject [virtualenv_path project_path]
+setvirtualenvproject
 ```
 
-Luego, dentro de nuestro directorio de trabajo y con nuestro venv activo, instalaremos los requerimientos para el desarrollo local haciendo
+Luego, siempre dentro de nuestro directorio de trabajo y con nuestro  activo, instalaremos los requerimientos para el desarrollo local haciendo
 
 ```console
 pip install -r requirements/local.txt
