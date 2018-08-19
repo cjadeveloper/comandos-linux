@@ -21,31 +21,43 @@ pip install "cookiecutter>=1.4.0"
 
 Con [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/projects.html) podemos aprovechar su potencia y crear ya un proyecto que nos cree un entorno virtual en el directorio WORKON_HOME que tengamos configurado y una carpeta de projecto en el directorio PROJECT_HOME que tengamos configurado en nuestra variable de entorno, lo active y nos quede listo ya para trabajar.
 
-Creamos un nuevo entorno virtual en el `WORKON_HOME` y un nuevo directorio de proyecto en `PROJECT_HOME` definidas en el archivo `~/.bashrc` haciendo
+*Si bien podemos hacer esto de un solo paso con `mkproject`, al momento de ejecutar `cookiecutter` contra el repo de `cookiecutter-django` nos va dar error porque la carpeta del projecto ya existe. Lo que vamos a hacer, entonces es crear el entorno virtual primero, situarnos en nuestra carpeta de projecto, PROJECT_HOME o en la que queramos guardar nuestro projecto, correr `cookiecutter` alli y luego vincular el entorno virtual con la carpeta del projecto ya creado con el comando `setvirtualenvproject`.*
+
+Creamos un nuevo entorno virtual en el `WORKON_HOME` definido el archivo `~/.bashrc` haciendo
 
 ```console
-mkproject [virtualenv options] ENVNAME
+mkvirtualenv [-a project_path] [-i package] [-r requirements_file] [virtualenv options] ENVNAME
 ```
 
-Por ejemplo, para crear un nuevo entorno virtual llamado `portfolio` en el directorio de mis entornos virtuales `~/.virtualenvs/` y un directorio `portfolio` en mi directorio de projecto `~/djprojects/` utilizando mi Python 3.6.4 escribo:
+Por ejemplo, para crear un nuevo entorno virtual llamado `mycookie` en el directorio de mis entornos virtuales `~/.virtualenvs/` utilizando mi Python 3.6.4 escribo:
 
 ```console
-mkproject -p python3.6 portfolio
+mkvirtualenv -p python3.6 mycookie
 ```
-
-Con esto, vinculamos el virtualenv `portfolio` al proyecto `portfolio` de un solo paso.
-
-**En este paso nos vamos a encontrar dentro de la carpeta `portfolio`, tendríamos que salir afuera de ella y ejecutar cookiecutter fuera de la misma carpeta para sobreescribir la misma, cosa que nos cree el projecto `portfolio` dentro de la carpeta portfolio nuevamente.**
 
 ### 2. Con el entorno activo, ejecutamos cookiecutter contra el repositorio de cookiecutter-django.
+
+Nos dirigimos al directorio donde queremos crear el projecto, en mi caso sera dentro del PROJECT_HOME, `~/djproject/`, y ejecutamos
 
 ```console
 cookiecutter https://github.com/pydanny/cookiecutter-django
 ```
 
-### 3. Instalamos los requerimientos para desarrollo local
+Contestaremos a las preguntas (es bueno ir anotando las respuestas, asi nos acordamos las opciones que hemos definido, ya que son muchas)
 
-(venv_name)$ pip install -r requirements/local.txt
+### 3. Vinculamos venv con projecto e instalamos los requerimientos para desarrollo local
+
+Luego que finalizamos, exitosamente, la parte de las preguntas y con el projecto de cookiecutter-django ya creado, vamos a vincular el entorno virtual con el directorio de trabajo con virtualenvwrapper, cosa que cuando iniciemos el venv en un futuro, nos dirija directamente a esa carpeta automaticamente, entre otros beneficios.
+
+```console
+setvirtualenvproject [virtualenv_path project_path]
+```
+
+Luego, dentro de nuestro directorio de trabajo y con nuestro venv activo, instalaremos los requerimientos para el desarrollo local haciendo
+
+```console
+pip install -r requirements/local.txt
+```
 
 ### 4. Creamos y configuramos la base de datos en PostgreSQL para usarla con Django.
 
