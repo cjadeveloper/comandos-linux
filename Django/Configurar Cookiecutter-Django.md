@@ -173,6 +173,27 @@ python manage.py runserver
 
 Y... voila!!!
 
-### 7. Set/Unset las variables de entorno de Django con virtualenvwrapper
+### 7. Activar/Desactivar las variables de entorno de Django con virtualenvwrapper
 
+Puede pasar que, al salir del entorno y volverlo a activar, la variable de  la base de datos que exportamos en el paso 4 no quede almacenada en la variable de entorno del venv. No daremos cuenta si al ejecutar `python manage.py runserver` nos da un error de que falta el password y blablabla.
 
+¿Cómo lo solucionamos? Activando las variables de entorno para nuestro projecto en el script _**bin/postactivate**_ dentro del entorno virtual
+
+```console
+### ~/.virtualenvs/mycookie/bin/postactivate
+##
+#!/bin/bash
+# This hook is sourced after this virtualenv is activated.
+
+# Seteo la variable DATABASE_URL de postgresql para desarrollo local
+export DATABASE_URL=postgres://user:password@localhost:5432/db_name
+```
+
+Luego, en _**bin/postdeactivate**_ desactivo las variables de entorno
+
+```console
+#!/bin/bash
+# This hook is sourced after this virtualenv is deactivated.
+
+unset DATABASE_URL
+```
