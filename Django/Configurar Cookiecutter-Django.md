@@ -29,15 +29,15 @@ Creamos un nuevo entorno virtual en el `WORKON_HOME` definido el archivo `~/.bas
 mkvirtualenv [-a project_path] [-i package] [-r requirements_file] [virtualenv options] ENVNAME
 ```
 
-Por ejemplo, para crear un nuevo entorno virtual llamado `mycookie` en el directorio de mis entornos virtuales `~/.virtualenvs/` utilizando mi Python 3.6.4 escribo:
+Por ejemplo, para crear un nuevo entorno virtual llamado `my_cookie` en el directorio de mis entornos virtuales `~/.virtualenvs/` utilizando mi Python 3.6.4 escribo:
 
 ```console
-mkvirtualenv -p python3.6 mycookie
+mkvirtualenv -p python3.6 my_cookie
 ```
 
 ### 2. Con el entorno activo, ejecutamos cookiecutter contra el repositorio de cookiecutter-django.
 
-Nos dirigimos al directorio donde queremos crear el projecto, en mi caso sera dentro del PROJECT_HOME, `~/djproject/`, y ejecutamos
+Nos dirigimos al directorio donde queremos crear el projecto, en mi caso sera dentro del PROJECT_HOME, `~/project/`, y ejecutamos
 
 ```console
 cookiecutter https://github.com/pydanny/cookiecutter-django
@@ -46,13 +46,13 @@ cookiecutter https://github.com/pydanny/cookiecutter-django
 Contestaremos a las preguntas (es bueno ir anotando las respuestas, asi nos acordamos las opciones que hemos definido, ya que son muchas). Por ejemplo, en nuestro caso:
 
 ```console
-(mycookie) user@laptop:~/djprojects$ cookiecutter https://github.com/pydanny/cookiecutter-django
+(my_cookie) user@laptop:~/djprojects$ cookiecutter https://github.com/pydanny/cookiecutter-django
 project_name [My Awesome Project]: My Cookiecutter Project
 project_slug [my_cookiecutter_project]: my_cookie           
 description [Behold My Awesome Project!]: Cookiecutter Django basico de prueba
-author_name [Daniel Roy Greenfeld]: Cristian Javier Azulay
-domain_name [example.com]: example.com
-email [cristian-javier-azulay@example.com]: info@example.com
+author_name [Daniel Roy Greenfeld]: Cristian Azulay
+domain_name [example.com]: mycookie.com
+email [cristian-javier-azulay@example.com]: cris@azulay.com
 version [0.1.0]: 
 Select open_source_license:
 1 - MIT
@@ -116,11 +116,11 @@ Nos conectamos a psql con usuario `postgres` o el superusuario que tengamos defi
 -- Crea la base de datos que has ingresado como project_slug en la etapa de configuración.
 -- La babosa (slug) de su proyecto sin guiones ni espacios. Se usa para nombrar su repositorio y
 -- en otros lugares donde se necesita una versión importable de Python del nombre de su proyecto.
--- Si le indicamos My_Project, entonces la base de datos la indicamos como my_project
-CREATE DATABASE my_project;
+-- Si le indicamos my_project, entonces la base de datos la indicamos como my_project
+CREATE DATABASE my_cookie;
 
 -- Create user for database
-CREATE ROLE my_user 
+CREATE ROLE my_cookie_user 
 WITH LOGIN ENCRYPTED PASSWORD 'password' 
 CREATEDB;
 -- Edit September 25/2015 : 
@@ -137,7 +137,7 @@ Ahora tenemos que decirle a Django la información de mi base de datos. Para hac
 Si estás en un entorno Unix. El siguiente comando hace el trabajo, dentro del entorno virtual:
 
 ```console
-export DATABASE_URL=postgres://my_user:password@localhost:5432/my_cookie
+export DATABASE_URL=postgres://my_cookie_user:password@localhost:5432/my_cookie
 ```
 
 ### 5. Corregimos error de Celery (si especificamos en las opciones que use Celery).
