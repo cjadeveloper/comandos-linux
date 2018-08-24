@@ -120,7 +120,7 @@ Nos conectamos a psql con usuario `postgres` o el superusuario que tengamos defi
 -- Si le indicamos my_project, entonces la base de datos la indicamos como my_project
 CREATE DATABASE my_cookie;
 
--- Create user for database
+-- Crear usuario para la base de datos
 CREATE ROLE my_cookie_user 
 WITH LOGIN ENCRYPTED PASSWORD 'password' 
 CREATEDB;
@@ -128,7 +128,20 @@ CREATEDB;
 -- For security Only set CREATEDB permission
 -- Which is required for the Django tests
 
--- Grant privileges to the user to access database
+-- Modificamos algunos parámetros de conexión para el usuario que acabamos de crear. 
+-- Esto acelerará las operaciones de la base de datos, por lo que no es necesario consultar
+-- los valores correctos y configurarlos cada vez que se establece una conexión.
+
+-- Configuramos la codificación predeterminada para UTF-8, que Django espera. También configuramos
+-- el esquema de aislamiento de transacción predeterminado como "read committed", que bloquea las 
+-- lecturas de transacciones no confirmadas.
+-- Por último, configuramos la zona horaria. Por defecto, nuestros proyectos de Django se configurarán
+-- para usar UTC:
+ALTER ROLE my_user SET client_encoding TO 'utf8';
+ALTER ROLE my_user SET default_transaction_isolation TO 'read committed';
+ALTER ROLE my_user SET timezone TO 'localtime';
+
+-- Otorgar todos los provilegios al usuario para la base de datos
 GRANT ALL PRIVILEGES ON DATABASE my_cookie TO my_user;
 ```
 En este punto, deberíamos tener una base de datos vacía trabajando con el usuario especificado.
