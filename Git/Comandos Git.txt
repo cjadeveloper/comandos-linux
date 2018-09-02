@@ -22,27 +22,45 @@ Iniciar repo:
     $ git init FOLDER
 
 
-Agregar archivo/cambio:
+Agregar archivo/cambio al área de preparación (o Index):
     $ git add NOMBRE
 
 
-Agregar todos los archivos/cambios:
+Agregar todos los archivos/cambios al área de preparación (o Index):
     $ git add -A
 
 
-Agregar dinámicamente (para hacer commits parciales de un archivo):
+Agregar dinámicamente al "área de preparación" o Index (para hacer commits parciales de un archivo):
     $ git add -p
 
+    elegir una de las siguientes opciones para cada "trozo parcial" (hunk):
 
-Commit cambios:
+        y : confirmar (al Index) este trozo
+        n : no organices este trozo
+        a : confirmar (al Index) esto y todos los trozos restantes en el archivo
+        d : no organices este trozo ni ninguno de los trozos restantes en el archivo
+        j : deja este trozo indeciso, mira el siguiente trozo indeciso
+        J : deja este trozo indeciso, mira el siguiente trozo
+        k : deja este pedazo indeciso, mira trozo indeciso anterior
+        K : deja este trozo indeciso, mira trozo anterior
+        s : divide el trozo actual en trozos más pequeños
+
+Revisar los cambios en el área de preparación antes de hacer commit (diferencia de cambios en el área de preparación):
+    $ git diff --cached
+
+Revisar también los cambios en el área de trabajo (diferencia de cambios en la copia de trabajo que no están en el área de preparación):
+    $ git diff
+
+
+Confirmar cambios:
     $ git commit -m "MENSAJE"
 
 
-Commit cambios y agregar:
+Confirmar cambios y agregar:
     $ git commit -am "MENSAJE"
 
 
-Commit cambios:
+Confirmar cambios:
     $ git commit --amend -m "MENSAJE"
 
 
@@ -66,13 +84,13 @@ Reset archivo:
     $ git reset --soft HEAD ARCHIVO
 
 
-Eliminar commit sin tocar el fuente:
+Eliminar confirmación sin tocar el fuente:
     $ git reset --soft SHA
     $ git reset --soft HEAD^
     $ git reset --soft HEAD^^ (dos commit atras)
 
 
-Eliminar commit completamente:
+Eliminar confirmación completamente:
     $ git reset --hard SHA
 
 
@@ -80,24 +98,24 @@ Limpiar proyecto en punto actual completamente:
     $ git reset --hard
 
 
-Eliminar ultimo commit atras:
+Eliminar último confirmación atrás:
     $ git reset --hard HEAD~1
     $ git reset --hard HEAD^
 
 
-Eliminar varios commit atras:
+Eliminar varias confirmaciones atrás:
     $ git reset --hard HEAD~NUMERO
 
 
-Limpiar commits hasta upstream:
+Limpiar confirmaciones hasta upstream:
     $ git reset --hard @{u}
 
 
-Crear branch:
+Crear rama:
     $ git branch NOMBRE
 
 
-Ir a branch o archivo:
+Ir a rama o archivo:
     $ git checkout NOMBRE
 
 
@@ -347,25 +365,30 @@ Situarse en la rama que va a fusionar
 
 ALIAS GIT
 ---------
+    $ git config --global alias.co checkout
+    $ git config --global alias.last 'log -1 HEAD'
 
-git config --global alias.co checkout
-git config --global alias.last 'log -1 HEAD'
+    Lista de alias comunes:
 
-co = checkout
-st = status -b
-ci = commit
-br = branch
-ff = merge --ff-only
-rt = remote -v
-fp = fetch --prune
-df = diff --cached
-lg = log --graph --pretty=format:\"%Cgreen%h%Creset - %Cred%aN%Creset - %Cblue%ad (%ar)%Creset - %s\"
-flog = log --pretty=fuller
-top = log -1
-ftop = log -1 --pretty=fuller
-cim = commit --amend --reset-author
-refreshcommit = commit --amend --only --reset-author --no-edit
-tip = rev-parse HEAD
-rbi = rebase -i
-rbc = rebase --continue
-ct = branch -r --contains
+        ap            : add -p 
+        co            : checkout
+        st            : status -b
+        ci            : commit
+        br            : branch
+        ff            : merge --ff-only
+        rt            : remote -v
+        fp            : fetch --prune
+        df            : diff --cached
+        lg            : log --graph --pretty=format:\"%Cgreen%h%Creset - %Cred%aN%Creset - %Cblue%ad (%ar)%Creset - %s\"
+        flog          : log --pretty=fuller
+        top           : log -1
+        ftop          : log -1 --pretty=fuller
+        cim           : commit --amend --reset-author
+        refreshcommit : commit --amend --only --reset-author --no-edit
+        tip           : rev-parse HEAD
+        rbi           : rebase -i
+        rbc           : rebase --continue
+        ct            : branch -r --contains
+
+Listar las alias usadas:
+    $ git config --get-regexp alias
