@@ -45,8 +45,41 @@ Agregar dinámicamente al "área de preparación" o Index (para hacer commits pa
         K : deja este trozo indeciso, mira trozo anterior
         s : divide el trozo actual en trozos más pequeños
 
+
+Eliminar archivo del área de preparación (y del directorio de trabajo)
+
+    $ git rm NOMBRE
+
+Además elimina el archivo de tu directorio de trabajo de manera que no aparezca la próxima vez como
+un archivo no rastreado.
+Si simplemente eliminas el archivo de tu directorio de trabajo, aparecerá en la sección
+“Changes not staged for commit” (esto es, sin preparar) en la salida de git status.
+Con la próxima confirmación, el archivo habrá desaparecido y no volverá a ser rastreado. Si 
+modificaste el archivo y ya lo habías añadido al índice, tendrás que forzar su eliminación con la opción -f. 
+
+
+Eliminar archivo del área de preparación pero mantener el archivo en tu directorio de trabajo.
+
+    $ git rm --cached NOMBRE
+
+En otras palabras, quisieras mantener el archivo en tu disco duro pero sin que Git lo siga rastreando.
+Esto puede ser particularmente útil si olvidaste añadir algo en tu archivo .gitignore y lo preparaste accidentalmente.
+
+
+Eliminar varios archivos
+
+    $ git ls-files --deleted -z | xargs -0 git rm
+
+git ls-files: lista archivos del indice de git.
+--deleted: solo muestra los archivos eliminados.
+-z: pone \0 (el conocido NUL) como terminador del string (util si el path tiene espacios).
+|: concatena la salida del primer commando con el siguiente.
+xargs: permite concatenar argumentos y pasarlos a un comando (en este caso git rm).
+-0: utiliza \0 como character de separación (por esto usamos -z en git ls-files).
+
 Revisar los cambios en el área de preparación antes de hacer commit (diferencia de cambios en el área de preparación):
     $ git diff --cached
+
 
 Revisar también los cambios en el área de trabajo (diferencia de cambios en la copia de trabajo que no están en el área de preparación):
     $ git diff
