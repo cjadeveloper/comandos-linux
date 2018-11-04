@@ -2,9 +2,9 @@
 
 ## Introducción
 
-[Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) es un conjunto de scripts de shell que hace que sea mucho más fácil administrar estos entornos.
+[Virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) es un conjunto de extensiones para [virtualenv](https://pypi.org/project/virtualenv/) que hace que sea mucho más fácil administrar esta herramienta de gestión de entornos aislados de Python.
 
-En los servidores de producción se suele utilizar virtualenv simple; virtualenvwrapper es muy útil en el desarrollo.
+Aunqe en los servidores de producción se suele utilizar virtualenv directamente (si bien hay hermosas excepciones, como [Heroku](https://www.heroku.com/) por ejemplo); virtualenvwrapper nos va a ser muy útil en el desarrollo.
 
 ## Instalación
 
