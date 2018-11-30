@@ -2,4 +2,4 @@
 
 ## Pacman
 
-Actualizar paquetes: `sudo pacman -Syyu
+Actualizar paquetes: `sudo pacman -Syyu`
