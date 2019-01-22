@@ -2,6 +2,12 @@ Conectarse a la cuenta "postgres" bajo linux:
     sudo -i -u postgres
     sudo su - postgres
 
+Para user psql en vscode desde el terminal, tendremos que guardar la variable de entorno
+    export PSQL_EDITOR = 'code -w'
+
+Conectarse a la cuenta "cris", al host "localhost" en el puerto "5432" a la DB 'test'
+    psql -U cris -h 127.0.0.1 -p 5432 -d test
+
 Creación de un usuario
     CREATE USER nombre_usuario WITH password '123456';
 
