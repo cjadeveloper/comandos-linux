@@ -77,6 +77,9 @@ git ls-files: lista archivos del indice de git.
 xargs: permite concatenar argumentos y pasarlos a un comando (en este caso git rm).
 -0: utiliza \0 como character de separación (por esto usamos -z en git ls-files).
 
+Luego, La forma más fácil de registrar todas las eliminaciones, adiciones y modificaciones en el árbol de trabajo es:
+    $ git add -A
+
 Revisar los cambios en el área de preparación antes de hacer commit (diferencia de cambios en el área de preparación):
     $ git diff --cached
 
