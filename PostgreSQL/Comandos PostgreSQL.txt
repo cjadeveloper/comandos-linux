@@ -1,4 +1,7 @@
-Conectarse a la cuenta "postgres" bajo linux:
+Comprobar Instalación de Postgres en Linux:
+    which psql
+    
+Conectarse a la cuenta "postgres" bajo Linux:
     sudo -i -u postgres
     sudo su - postgres
 
