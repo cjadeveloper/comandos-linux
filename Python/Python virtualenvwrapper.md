@@ -106,6 +106,6 @@ setvirtualenvproject [virtualenv_path project_path]
 
 Los argumentos para `setvirtualenvproject` son las rutas completas al directorio virtualenv y project. Se establece una asociación para que cuando `workon` active el virtualenv, el proyecto también se active.
 
-Cuando no se dan argumentos, se supone el directorio virtualenv actual y el actual.
+Cuando no se dan argumentos, se supone el directorio virtualenv actual y el entorno virtual python actual.
 
 Cualquier número de virtualenvs puede referirse al mismo directorio de proyectos, lo que facilita el cambio entre las versiones de Python u otras dependencias para la prueba.
