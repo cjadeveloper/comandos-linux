@@ -16,6 +16,7 @@ Base de conocimientos sobre comandos linux y programas asociados con el manejo e
 - [Virtualenvwrapper](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Python/Python%20virtualenvwrapper.md#usando-virtualenvwrapper)
 - [Django](https://github.com/cjadeveloper/comandos-linux-notes/tree/master/Django)
 
-## Sobre Bases ded Datos
+## Sobre Bases de Datos
 
-- [Postgres](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/PostgreSQL/Comandos%20PostgreSQL.txt)
+- [MongoDB](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Databases/MongoDB.md#mongodb-notes)
+- [Postgres](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Databases/Comandos%20PostgreSQL.txt)
