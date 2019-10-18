@@ -28,6 +28,10 @@ Eliminar todo y imagenes
 ------------------------
 docker rmi -f $(docker images -aq)
 
+Eliminar imágenes que contengan "cjadeveloper/"
+-----------------------------------------------
+docker rmi $(docker images -f "cjadeveloper\/*" -q)
+
 Descargar imagen
 ----------------
 docker pull IMAGEN
