@@ -13,8 +13,9 @@ Base de conocimientos sobre comandos linux y programas asociados con el manejo e
 - [Git](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Git/Comandos%20Git.txt)
 - [Docker](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Docker/Comandos%20Generales.txt)
 
-## Node
+## JS
 
+- Vainilla Javascript
 - [Node Version Manager (nmv)](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Node/nvm.md#node-version-manager-nvm)
 
 ## Python
