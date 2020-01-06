@@ -15,7 +15,7 @@ Base de conocimientos sobre comandos linux y programas asociados con el manejo e
 
 ## JS
 
-- Vainilla Javascript
+- [Vainilla Javascript](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Node/vainilla-js.md#vainilla-javascript-notes)
 - [Node Version Manager (nmv)](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Node/nvm.md#node-version-manager-nvm)
 
 ## Python
