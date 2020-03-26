@@ -32,16 +32,15 @@ Luego activamos la version con `nvm use`
 
 ## Al iniciar un archivo de node usando nvm
 
-On Mac/Linux: Previously to run `node <app_name>`, create a symbolic-link with terminal 
-command:
+On Mac/Linux: Previously to run `node <app_name>`, create a symbolic-link with terminal command:
 
-- if use nvm: 
+- if use nvm:
 
   ```sh
   sudo ln -s `nvm which current` /usr/local/bin/node
   ```
 
-- if use only a single node version: 
+- if use only a single node version:
 
   ```sh
   sudo ln -s `which node` /usr/local/bin/node

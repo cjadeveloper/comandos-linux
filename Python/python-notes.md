@@ -2,6 +2,94 @@
 
 ## Abriendo el apetito
 
+### Python más Pythónico
+
+Charla dictada por Roberto Alsina -[@ralsina](https://twitter.com/ralsina?lang=es)- en el Python Meetup del 07/11/2019
+
+#### 1. Python es EXPRESIVO
+
+#### 2. Usa Python
+
+#### 3. Usá más Python
+
+#### 4. Usá estructuras de Datos (correcta)
+
+La fuente mas común de ineficiencia y errores en los programas Python es usar la estructura de datos equivocada. 
+
+Por ejemplo si *vamos a buscar algo* y hacemos
+
+```py
+if x in datos:
+    algo(x)
+```
+
+Ese código puede ser muy lenta si `datos` es una lista o una tupla, a medida que `datos` es más grande. En cambio si `datos` fuera un set o un diccionario, esto tarda lo mismo si tuvieramos 5 elementos que si tuvieramos 1 millon.
+
+Si *vamos a modificar algo* y hacemos:
+
+```py
+data.pop(0)
+```
+
+Si `data` fuera una lista, sacar *de adelante*, osea del lado izquierdo `pop(0)`, es ineficiente en listas. Sacar del lado derecho, osea del último elemento, si es eficiente.
+
+```bash
+>>> q = []
+>>> q.append('eat')
+>>> q.append('sleep')
+>>> q.append('code')
+>>> q
+['eat', 'sleep', 'code']
+
+# Cuidado con ésto! Puede ser muy lento para muchos elementos
+>>> q.pop(0)
+['eat']
+```
+
+Si tenés que sacar de adelante, tenés que usar un `collections.deque`. Python’s deque objects are implemented as doubly-linked lists. This
+gives them excellent and consistent performance for inserting and
+deleting elements, but poor O(n) performance for randomly access-
+ing elements in the middle of the stack.
+
+```bash
+>>> from collections import deque
+>>> q = deque()
+>>> q.append('eat')
+>>> q.append('sleep')
+>>> q.append('code')
+>>> q
+deque(['eat', 'sleep', 'code'])
+
+>>> q.popleft()
+'eat'
+>>> q.popleft()
+'sleep'
+>>> q.popleft()
+'code'
+>>> q.popleft()
+IndexError: "pop from an empty queue"
+```
+
+Si tenemos:
+
+```py
+x = x + y
+```
+
+Si `x` e `y` son strings lo que va hacer la sobrecarga del operador "sumar" es crear un nuevo string `x` con el tamaño de los dos strings concatenados (sumados), copiar todos los datos al nuevo string `x`. Sumamente ineficiente si estamos dentro de un loop por ejemplo.
+
+Si se va a sumar muchos strings, lo que hay que hacer es un `join()` de los strings y no iterar y sumar.
+
+#### Usa PyPI
+
+Buscá primero en PyPI si no está lo que querés hacer, que seguro va a estar mejor hecho y probado.
+
+#### Simple es mejor que Complejo
+
+Pero **MAINTANABLE code is more important que CLEVER code**
+
+Entonces, **Programa como si lo fuera a leer Fantino**
+
 ### Invocando al intérprete
 
 La forma de operar del intérprete es parecida a la línea de comandos de Unix: cuando se la llama con la entrada estándar conectada a una terminal lee y ejecuta comandos en forma interactiva; cuando es llamada con un nombre de archivo como argumento o con un archivo como entrada estándar, lee y ejecuta un script del archivo.

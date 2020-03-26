@@ -13,10 +13,14 @@ Base de conocimientos sobre comandos linux y programas asociados con el manejo e
 - [Git](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Git/Comandos%20Git.txt)
 - [Docker](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Docker/Comandos%20Generales.txt)
 
-## JS
+## IDEs
 
-- [Vainilla Javascript](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Node/vainilla-js.md#vainilla-javascript-notes)
-- [Node Version Manager (nmv)](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Node/nvm.md#node-version-manager-nvm)
+- [Vim and Neovim](https://github.com/cjadeveloper/comandos-linux-notes/tree/master/IDEs/vim.md#notas-sobre-vim-y-neovim)
+
+## Javascript
+
+- [Vainilla Javascript](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Javascript/vainilla-js.md#vainilla-javascript-notes)
+- [Node Version Manager (nmv)](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Javascript/nvm.md#node-version-manager-nvm)
 
 ## Python
 
@@ -24,4 +28,4 @@ Base de conocimientos sobre comandos linux y programas asociados con el manejo e
 - [Python](https://github.com/cjadeveloper/comandos-linux-notes/tree/master/Python)
 - [Virtualenv](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Python/Python%20virtualenv.txt)
 - [Virtualenvwrapper](https://github.com/cjadeveloper/comandos-linux-notes/blob/master/Python/Python%20virtualenvwrapper.md#usando-virtualenvwrapper)
-- [Django](https://github.com/cjadeveloper/comandos-linux-notes/tree/master/Django)
+- [Django](https://github.com/cjadeveloper/comandos-linux-notes/tree/master/Python/Django)
