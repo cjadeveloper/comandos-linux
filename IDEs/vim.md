@@ -6,11 +6,12 @@
 
 Copiar como en cualquier sistema y pegar con `Ctrl+V` en VIM
 
-### Setear texto de todo el documento a 80 columnas
+### Setear texto de todo el documento a 88 columnas
 
-By [Michael Madsen](https://stackoverflow.com/a/3033455/9062331) in StackOverflow
+By [Michael Madsen](https://stackoverflow.com/a/3033455/9062331) in StackOverflow.
 
-Mover al principio del archivo (se puede hacer con `Ctrl-Home` o `gg`), y tipear `gqG`.
+Luego de setear el ajuste de texto 80 columnas con `:set tw=88` movemos al
+principio del archivo (se puede hacer con `Ctrl-Home` o `gg`), y tipear `gqG`.
 
 `gqG` formatea el texto comenzando desde la posición actual hasta el final del archivo.
 Unirá automáticamente líneas consecutivas cuando sea posible. Puede poner una línea en
