@@ -10,15 +10,15 @@
 
 ### Cambiar a modo normal en un terminal dentro del editor
 
-- <C-\> <C-n>
+- `<C-\> <C-n>`
 
 Es decir `Ctrl+\` seguido de `Ctrl+n` si tenemos el teclado en EN. Si tenemos el teclado
-en ES para el caso de `C-\` será `Ctrl+AltGr+\`.
-
-## Modo Normal
-
-### Copiar del sistema a VIM
-
+                                                         
+                                                         
+## Modo Normal                                           
+                                                         
+### Copiar del sistema a VIM                             
+                                                         
 Copiar como en cualquier sistema y pegar con `Ctrl+V` en VIM
 
 ### Setear texto de todo el documento a 88 columnas
