@@ -1,5 +1,20 @@
 # Notas sobre VIM y NeoVIM
 
+## Modo Comando
+
+### Abrir una terminal al costado derecho de la ventana actual
+
+```console
+:vs|:term
+```
+
+### Cambiar a modo normal en un terminal dentro del editor
+
+- <C-\> <C-n>
+
+Es decir `Ctrl+\` seguido de `Ctrl+n` si tenemos el teclado en EN. Si tenemos el teclado
+en ES para el caso de `C-\` será `Ctrl+AltGr+\`.
+
 ## Modo Normal
 
 ### Copiar del sistema a VIM
@@ -14,8 +29,8 @@ Luego de setear el ajuste de texto 80 columnas con `:set tw=88` movemos al
 principio del archivo (se puede hacer con `Ctrl-Home` o `gg`), y tipear `gqG`.
 
 `gqG` formatea el texto comenzando desde la posición actual hasta el final del archivo.
-Unirá automáticamente líneas consecutivas cuando sea posible. Puede poner una línea en
-blanco entre dos líneas si no desea que esas cosas pasen.
+El comando unirá automáticamente líneas consecutivas cuando sea posible. Puede poner
+una línea en blanco entre dos líneas si no desea que esas cosas pasen.
 
 ## Modo Inserción
 
@@ -23,8 +38,6 @@ blanco entre dos líneas si no desea que esas cosas pasen.
 
 El registro de expresión *(expression registry)* nos permite realizar cálculos y luego
 insertar el resultado directamente en nuestro documento.
-
-Supongamos que acabamos de escribir lo siguiente:
 
 ```console
 5 bolsas de cemento, cada una cuesta $ 455, total $
