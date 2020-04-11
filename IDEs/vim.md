@@ -12,13 +12,13 @@
 
 - `<C-\> <C-n>`
 
-Es decir `Ctrl+\` seguido de `Ctrl+n` si tenemos el teclado en EN. Si tenemos el teclado
-                                                         
-                                                         
+Es decir `Ctrl+\` seguido de `Ctrl+n` si tenemos el teclado en EN. Si tenemos el 
+teclado en ES sería `Ctrl+AltGr+\` seguido de `Ctrl+n`. 
+
 ## Modo Normal                                           
-                                                         
+
 ### Copiar del sistema a VIM                             
-                                                         
+
 Copiar como en cualquier sistema y pegar con `Ctrl+V` en VIM
 
 ### Setear texto de todo el documento a 88 columnas
