@@ -12,12 +12,11 @@
 
 - `<C-\> <C-n>`
 
-Es decir `Ctrl+\` seguido de `Ctrl+n` si tenemos el teclado en EN. Si tenemos el 
-teclado en ES sería `Ctrl+AltGr+\` seguido de `Ctrl+n`. 
+Es decir `Ctrl+\` seguido de `Ctrl+n` si tenemos el teclado en EN. Si tenemos el teclado en ES sería `Ctrl+AltGr+\` seguido de `Ctrl+n`.
 
-## Modo Normal                                           
+## Modo Normal
 
-### Copiar del sistema a VIM                             
+### Copiar del sistema a VIM
 
 Copiar como en cualquier sistema y pegar con `Ctrl+V` en VIM
 
