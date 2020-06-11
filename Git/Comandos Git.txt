@@ -30,7 +30,7 @@ Agregar todos los archivos/cambios al área de preparación (o Index):
     $ git add -A
 
 
-Agregar dinámicamente al "área de preparación" o Index (para hacer commits 
+Agregar dinámicamente al "área de preparación" o Index (para hacer commits
 parciales de un archivo):
     $ git add -p
 
@@ -51,24 +51,24 @@ Eliminar archivo del área de preparación (y del directorio de trabajo)
 
     $ git rm NOMBRE
 
-Además elimina el archivo de tu directorio de trabajo de manera que no 
+Además elimina el archivo de tu directorio de trabajo de manera que no
 aparezca la próxima vez como un archivo no rastreado.
-Si simplemente eliminas el archivo de tu directorio de trabajo, aparecerá 
-en la sección “Changes not staged for commit” (esto es, sin preparar) en 
+Si simplemente eliminas el archivo de tu directorio de trabajo, aparecerá
+en la sección “Changes not staged for commit” (esto es, sin preparar) en
 la salida de git status.
-Con la próxima confirmación, el archivo habrá desaparecido y no volverá a 
-ser rastreado. Si modificaste el archivo y ya lo habías añadido al índice, 
-tendrás que forzar su eliminación con la opción -f. 
+Con la próxima confirmación, el archivo habrá desaparecido y no volverá a
+ser rastreado. Si modificaste el archivo y ya lo habías añadido al índice,
+tendrás que forzar su eliminación con la opción -f.
 
 
-Eliminar archivo del área de preparación pero mantener el archivo en tu 
+Eliminar archivo del área de preparación pero mantener el archivo en tu
 directorio de trabajo.
 
     $ git rm --cached NOMBRE
 
-En otras palabras, quisieras mantener el archivo en tu disco duro pero sin que 
+En otras palabras, quisieras mantener el archivo en tu disco duro pero sin que
 Git lo siga rastreando.
-Esto puede ser particularmente útil si olvidaste añadir algo en tu archivo 
+Esto puede ser particularmente útil si olvidaste añadir algo en tu archivo
 .gitignore y lo preparaste accidentalmente.
 
 
@@ -78,24 +78,24 @@ Eliminar varios archivos
 
 * git ls-files: lista archivos del indice de git.
 * --deleted: solo muestra los archivos eliminados.
-* -z: pone \0 (el conocido NUL) como terminador del string (util si el path 
+* -z: pone \0 (el conocido NUL) como terminador del string (util si el path
 tiene espacios).
 * |: concatena la salida del primer commando con el siguiente.
-* xargs: permite concatenar argumentos y pasarlos a un comando (en este caso 
+* xargs: permite concatenar argumentos y pasarlos a un comando (en este caso
 git rm).
-* -0: utiliza \0 como character de separación (por esto usamos -z en git 
+* -0: utiliza \0 como character de separación (por esto usamos -z en git
 ls-files).
 
-Luego, La forma más fácil de registrar todas las eliminaciones, adiciones y 
+Luego, La forma más fácil de registrar todas las eliminaciones, adiciones y
 modificaciones en el árbol de trabajo es:
     $ git add -A
 
-Revisar los cambios en el área de preparación antes de hacer commit (diferencia 
+Revisar los cambios en el área de preparación antes de hacer commit (diferencia
 de cambios en el área de preparación):
     $ git diff --cached
 
 
-Revisar también los cambios en el área de trabajo (diferencia de cambios en la 
+Revisar también los cambios en el área de trabajo (diferencia de cambios en la
 copia de trabajo que no están en el área de preparación):
     $ git diff
 
@@ -122,15 +122,15 @@ Registro de commits:
     $ git log --graph
     $ git log --decorate
     $ git log --all
-    
+
     También podemos concatenar más de uno:
     $ git log --graph --decorate --oneline
 
 
 Revirtiendo cambios en git (RESET y REVERT)
 
-* RESET revierte los cambios moviendo la referencia de una rama hacia atrás 
-en el tiempo a un commit anterior. Va a mover la rama hacia atrás, 
+* RESET revierte los cambios moviendo la referencia de una rama hacia atrás
+en el tiempo a un commit anterior. Va a mover la rama hacia atrás,
 como si el commit nunca se hubiera hecho.
 
 Reset archivo:
@@ -158,8 +158,8 @@ Eliminar varias confirmaciones atrás:
 Limpiar confirmaciones hasta upstream:
     $ git reset --hard @{u}
 
-Mientras que resetear los cambios funciona genial para ramas locales en tu 
-máquina, su método de "reescribir la historia" no funciona para ramas remotas 
+Mientras que resetear los cambios funciona genial para ramas locales en tu
+máquina, su método de "reescribir la historia" no funciona para ramas remotas
 que otros están usando.
 
 Crear rama:
@@ -176,7 +176,7 @@ Ir a commit:
 
 Moverse por los commits relativamente:
 
-* Ir al commit anterior, al padre, al que apunta la rama NOMBRE) 
+* Ir al commit anterior, al padre, al que apunta la rama NOMBRE)
     $ git checkout NOMBRE^
 
 * Ir al commit abuelo, 2da. generacion atras, al que apunta la rama NOMBRE
@@ -184,8 +184,8 @@ Moverse por los commits relativamente:
 
 * Vuelve un commit hacia atras de donde apunta HEAD, ultimo cambio
     $ git checkout HEAD^
-    
-* Podemos movernos n veces hacia atras en el arbol de commit haciendo n veces 
+
+* Podemos movernos n veces hacia atras en el arbol de commit haciendo n veces
 "git checkout NOMBRE^". Sin embargo existe una mejor forma y es hacerlo con
 el operador "~" seguido del numero de veces que queremos ir hacia atras.
     $ git checkout NOMBRE~<num>
@@ -194,7 +194,7 @@ el operador "~" seguido del numero de veces que queremos ir hacia atras.
     $ git branch -f master HEAD~3
 
 * Mover especificando un commit directamente
-    $ git branch -f master C3	
+    $ git branch -f master C3
 
 
 Restaurar archivo desde commit:
@@ -444,7 +444,7 @@ ALIAS GIT
 
     Lista de alias comunes:
 
-        ap            : add -p 
+        ap            : add -p
         co            : checkout
         st            : status -b
         ci            : commit
@@ -466,3 +466,11 @@ ALIAS GIT
 
 Listar las alias usadas:
     $ git config --get-regexp alias
+
+
+TRABAJANDO CON SUBMODULOS EN GIT: PROYECTOS DENTRO DE PROYECTOS
+---------------------------------------------------------------
+
+referencia: https://git-scm.com/book/es/v2/Herramientas-de-Git-Subm%C3%B3dulos
+
+Ver capítulo completo del libro para el trabajo con submódulos en Git y Github
