@@ -1,3 +1,13 @@
+Loguearse a Docker Hub
+----------------------
+docker login
+
+Listar imagenes
+---------------
+docker images
+docker images python
+docker images -f "cjadeveloper/*"
+
 Listar contenedores
 -------------------
 docker ps
@@ -30,7 +40,14 @@ docker rmi -f $(docker images -aq)
 
 Eliminar imágenes que contengan "cjadeveloper/"
 -----------------------------------------------
+
+bash
+----
 docker rmi $(docker images -f "cjadeveloper\/*" -q)
+
+fish
+----
+docker rmi 'docker images -f "cjadeveloper\/*" -q'
 
 Descargar imagen
 ----------------

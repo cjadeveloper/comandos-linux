@@ -11,12 +11,13 @@ Aunque en los servidores de producción se suele utilizar virtualenv directament
 Fedora
 
 ```bash
-$ sudo dnf install python-virtualenvwrapper
+sudo dnf install python-virtualenvwrapper
 ```
 
 Debian, Ubuntu
+
 ```bash
-$ sudo apt-get install virtualenvwrapper
+sudo apt-get install virtualenvwrapper
 ```
 
 ## Configuración de virtualenvwrapper
