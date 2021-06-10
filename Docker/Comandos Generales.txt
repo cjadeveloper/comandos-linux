@@ -53,6 +53,11 @@ Descargar imagen
 ----------------
 docker pull IMAGEN
 
-Ejecutar consola dentro de contenedor
--------------------------------------
+Salir de la consola de un contenedor sin parar su ejecucion
+-----------------------------------------------------------
 Ctrl-PQ
+
+Entrar nuevamente al shell (bash) del contenedor (ubuntu2)
+----------------------------------------------------------
+docker container exec -it ubuntu2 bash
+
