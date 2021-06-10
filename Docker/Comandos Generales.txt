@@ -55,9 +55,4 @@ docker pull IMAGEN
 
 Ejecutar consola dentro de contenedor
 -------------------------------------
-docker exec -ti CONTENEDOR /bin/sh
-docker-compose exec NOMBRE_SERVICIO sh
-
-Ejecutar imagen con puerto, volumen y variable
-----------------------------------------------
-docker run -d -p LOCAL:CONTENEDOR -e VARIABLE=valor -v /LOCAL:/CONTENEDOR IMAGEN
+Ctrl-PQ
