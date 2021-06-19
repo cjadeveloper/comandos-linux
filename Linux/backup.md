@@ -1,6 +1,8 @@
 # Backup del Sistema Linux Ubuntu
 
-## Copia de Respaldo del Sistema
+## Usando las herramientas del sistema
+
+### Copia de Respaldo del Sistema
 
 Hace el backup de la carpeta raiz dentro del directorio de usuario, excluyendo los directorios especificados. Luego, esos directorios tendran que volver a crearse al finalizarla restauracion 
 
@@ -10,7 +12,7 @@ sudo tar czf ~/backup-ubuntu.tar.gz --exclude=/run --exclude=/home --exclude=/de
 
 Tambien podriamos crearlo especificando la fecha de creacion asi podemos automatizar en un script el comando e ir guardando  ~/backup-ubuntu-$(date +%Y%m%d-%H%M%S).tar.gz
 
-## Restauracion del Backup de Sistema
+### Restauracion del Backup de Sistema
 
 Para restaurar el backup debemos movernos a la raiz de nuestro sistema y hacer lo siguiente. Esto puede tardar un buen rato.
 
@@ -31,3 +33,26 @@ etc...
 ```
 
 Si el sistema esta danado, podemos recuperar el backup desde un LiveCD de Ubuntu tambien y luego crear las carpetas faltantes.
+
+## Usando rdiff-backup
+
+```fish
+#!/usr/bin/env fish
+
+set DBG 4
+set DIRMOUNT /media/data/backup
+
+if ! test -d $DIRMOUNT/$PWD
+    mkdir -p "$DIRMOUNT/$PWD"
+end
+
+rdiff-backup -v$DBG --print-statistics --force --exclude $PWD/.cache \ 
+--exclude $PWD/.local/share --exclude $PWD/Dropbox --exclude $PWD/.pyenv \ 
+--exclude $PWD/.poetry --exclude $PWD/.nvm --exclude $PWD/code/'**'/.venv \ 
+--exclude $PWD/code/'**'/node_modules --exclude $PWD/Descargas \ 
+--exclude $PWD/Documentos $PWD/ $DIRMOUNT/$PWD/
+
+rdiff-backup -v$DBG --print-statistics --remove-older-than 3W $DIRMOUNT/$PWD/
+
+rdiff-backup -l $DIRMOUNT/$PWD/
+```
